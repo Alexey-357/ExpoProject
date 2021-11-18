@@ -1,0 +1,56 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="ExporeisenApp" 
+        WindowState = "Maximized"
+        Background="SlateGray" d:DesignWidth="234.98" d:DesignHeight="160.523">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="PaleGreen"></Setter>
+            
+        </Style>
+    </Window.Resources>
+
+    <Grid >
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" ></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle
+            Grid.Column="0"
+            Fill="#e8ebf1" >
+
+        </Rectangle>
+        <Image Source="https://exporeisen.de/images/logo.png" VerticalAlignment="Top" Width="250px" Margin="0 20 0 0"></Image>
+        <Button VerticalAlignment="Bottom" Height="50px" Width="50px" Click="showAddGrid"></Button>
+        <Grid Grid.Column="1" x:Name="addGrid" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="20*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+               
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Click="ButtonEN_Click" Name="ButtonEN">EN</Button>
+                <Button Grid.Column="1" Click="ButtonDE_Click"  Name="ButtonDE">DE</Button>
+                <Button Grid.Column="2" Click="ButtonRU_Click"  Name="ButtonRU">RU</Button>
+            </Grid>
+            <Frame Grid.Row="1" Name="frame" NavigationUIVisibility="Hidden" Visibility="Visible"  Background="Azure"/>
+        </Grid>
+
+
+
+
+    </Grid>
+</Window>
